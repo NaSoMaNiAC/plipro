@@ -1,7 +1,6 @@
-#1 module
+
 import sqlite3
 
-#2 class, constructor and methods 
 class Database:
     def __init__(self, db):
         self.conn = sqlite3.connect(db)

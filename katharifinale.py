@@ -23,14 +23,14 @@ def saveRecord():
         if is_expense.get():
             amount = -amount
     except ValueError:
-        messagebox.showerror("ΛΑΘΟΣ ΠΑΡΑΚΑΛΩ ΕΙΣΑΓΕΤΕ ΝΟΥΜΕΡΑ")
+        messagebox.showerror(title="ΛΑΘΟΣ", message="ΛΑΘΟΣ ΠΑΡΑΚΑΛΩ ΕΙΣΑΓΕΤΕ ΝΟΥΜΕΡΑ")
         return
     
     #ELENXOS GIA SOSTI IMEROMINIA
     try:
         dt.datetime.strptime(transaction_date.get(), "%d %B %Y")
     except ValueError:
-        messagebox.showerror("ΠΑΡΑΚΑΛΩ ΕΙΣΑΓΕΤΕ ΣΩΣΤΑ  ΗΜΕΡΑ ΜΗΝΑ ΕΤΟΣ.")
+        messagebox.showerror(title="ΛΑΘΟΣ", message="ΠΑΡΑΚΑΛΩ ΕΙΣΑΓΕΤΕ ΣΩΣΤΑ  ΗΜΕΡΑ ΜΗΝΑ ΕΤΟΣ.")
         return
 
     data.insertRecord(item_name=item_name.get(), item_price=amount, purchase_date=transaction_date.get())
